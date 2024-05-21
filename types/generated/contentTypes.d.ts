@@ -843,15 +843,15 @@ export interface ApiHumanHuman extends Schema.CollectionType {
     Phone: Attribute.BigInteger;
     Email: Attribute.Email;
     Telegram: Attribute.BigInteger;
-    products: Attribute.Relation<
-      'api::human.human',
-      'oneToMany',
-      'api::product.product'
-    >;
     orders: Attribute.Relation<
       'api::human.human',
       'oneToMany',
       'api::order.order'
+    >;
+    products: Attribute.Relation<
+      'api::human.human',
+      'oneToMany',
+      'api::product.product'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -889,13 +889,13 @@ export interface ApiOrderOrder extends Schema.CollectionType {
       'manyToOne',
       'api::human.human'
     >;
+    Quantity: Attribute.Integer;
+    TotalPrice: Attribute.Decimal;
     product: Attribute.Relation<
       'api::order.order',
       'manyToOne',
       'api::product.product'
     >;
-    Quantity: Attribute.Integer;
-    TotalPrice: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -926,13 +926,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    price: Attribute.Integer;
-    Quantity: Attribute.Integer;
-    Organic: Attribute.Boolean;
-    OriginProvince: Attribute.String;
-    images: Attribute.Media;
-    ProductID: Attribute.Integer;
     category: Attribute.Relation<
       'api::product.product',
       'manyToOne',
@@ -948,6 +941,14 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::order.order'
     >;
+    name: Attribute.String;
+    price: Attribute.Decimal;
+    CategoryID: Attribute.BigInteger;
+    Quantity: Attribute.BigInteger;
+    Organic: Attribute.Boolean;
+    OriginProvince: Attribute.String;
+    OwnerID: Attribute.BigInteger;
+    images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

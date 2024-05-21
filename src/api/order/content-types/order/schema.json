@@ -21,17 +21,17 @@
       "target": "api::human.human",
       "inversedBy": "orders"
     },
-    "product": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product.product",
-      "inversedBy": "orders"
-    },
     "Quantity": {
       "type": "integer"
     },
     "TotalPrice": {
       "type": "decimal"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "orders"
     }
   }
 }

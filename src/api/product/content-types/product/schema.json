@@ -12,35 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
-    "price": {
-      "type": "integer"
-    },
-    "Quantity": {
-      "type": "integer"
-    },
-    "Organic": {
-      "type": "boolean"
-    },
-    "OriginProvince": {
-      "type": "string"
-    },
-    "images": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "ProductID": {
-      "type": "integer"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -58,6 +29,37 @@
       "relation": "oneToMany",
       "target": "api::order.order",
       "mappedBy": "product"
+    },
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "CategoryID": {
+      "type": "biginteger"
+    },
+    "Quantity": {
+      "type": "biginteger"
+    },
+    "Organic": {
+      "type": "boolean"
+    },
+    "OriginProvince": {
+      "type": "string"
+    },
+    "OwnerID": {
+      "type": "biginteger"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

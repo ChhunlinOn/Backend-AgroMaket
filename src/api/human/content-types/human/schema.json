@@ -34,16 +34,16 @@
     "Telegram": {
       "type": "biginteger"
     },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product",
-      "mappedBy": "use"
-    },
     "orders": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::order.order",
+      "mappedBy": "use"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
       "mappedBy": "use"
     }
   }
