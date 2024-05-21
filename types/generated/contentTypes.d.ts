@@ -943,7 +943,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     name: Attribute.String;
     price: Attribute.Decimal;
-    CategoryID: Attribute.BigInteger;
+    productID: Attribute.BigInteger;
     Quantity: Attribute.BigInteger;
     Organic: Attribute.Boolean;
     OriginProvince: Attribute.String;
